@@ -1,6 +1,7 @@
 require 'gema/Alimentos.rb'
 require 'gema/lista.rb'
 require 'gema/plato.rb'
+require 'gema/plato_hijo.rb'
 
 RSpec.describe Plato do
 	        before :each do
@@ -136,7 +137,7 @@ RSpec.describe Plato do
 
 		describe "Pruebas de clase Plato hijo " do
 			it "prueba  <  plato hijo" do
-				expect(@plato_hijo1 < @plato_hijo2).to eq(true)
+				expect(@plato_hijo1 < @plato_hijo2).to eq(false)
 			end
 		end	
 end
