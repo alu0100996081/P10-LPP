@@ -208,7 +208,7 @@ RSpec.describe Alimentos do
 			@lista.insert_tail(@a2)
 			@lista.insert_tail(@a3)
 
-			expect(@lista.min).to eq(@a1)
+			expect(@lista.min).to eq(@a3)
 		end
 
 		it "Prueba max" do
@@ -216,7 +216,7 @@ RSpec.describe Alimentos do
                         @lista.insert_tail(@a2)
                         @lista.insert_tail(@a3)
    
-                        expect(@lista.max).to eq(@a1)
+                        expect(@lista.max).to eq(@a2)
                 end
 
 		it "Prueba sort" do
@@ -224,7 +224,7 @@ RSpec.describe Alimentos do
                         @lista.insert_tail(@a2)
                         @lista.insert_tail(@a3)
 
-                        expect(@lista.sort).to eq([@a1,@a2,@a3])
+                        expect(@lista.sort).to eq([@a3,@a1,@a2])
                 end
 
 		 it "Prueba select" do
