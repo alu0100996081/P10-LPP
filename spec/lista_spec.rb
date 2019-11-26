@@ -172,9 +172,9 @@ RSpec.describe Alimentos do
             expect(@dieta_animal.tierras).to eq(190)
         end
     end
-	describe "Pruebas comparables alimentos" do
+	describe "Prueba comparable alimentos" do
 		it "Prueba >" do
-			expect(@a1>@a2).to eq(true)
+			expect(@a1>@a2).to eq(false)
 		end
 		
 		it "Prueba <" do
@@ -182,7 +182,7 @@ RSpec.describe Alimentos do
                 end
 
  		it "Prueba >=" do
-                        expect(@a1>=@a2).to eq(true)
+                        expect(@a1>=@a2).to eq(false)
                 end
 
  		it "Prueba <=" do
@@ -190,15 +190,57 @@ RSpec.describe Alimentos do
                 end
 
   		it "Prueba ==" do
-                        expect(@a1==@a2).to eq(true)
+                        expect(@a1==@a2).to eq(false)
                 end
 
 		it "Prueba between" do
-			expect(@a1.between?(@a2,@a3)).to eq(true)
+			expect(@a1.between?(@a2,@a3)).to eq(false)
                 end
 
   		it "Prueba clamp" do
-			expect(@a1.irenergia.clamp(0,20)).to eq(20)
+			expect(@a1.energia.clamp(0,20)).to eq(20)
+                end
+	end	
+
+	describe "Prueba enumerable lista" do
+		it "Prueba min" do 
+			@lista.insert_tail(@a1)
+			@lista.insert_tail(@a2)
+			@lista.insert_tail(@a3)
+
+			expect(@lista.min).to eq(@a1)
+		end
+
+		it "Prueba max" do
+                        @lista.insert_tail(@a1)
+                        @lista.insert_tail(@a2)
+                        @lista.insert_tail(@a3)
+   
+                        expect(@lista.max).to eq(@a1)
+                end
+
+		it "Prueba sort" do
+                        @lista.insert_tail(@a1)
+                        @lista.insert_tail(@a2)
+                        @lista.insert_tail(@a3)
+
+                        expect(@lista.sort).to eq([@a1,@a2,@a3])
+                end
+
+		 it "Prueba select" do
+                        @lista.insert_tail(@a1)
+                        @lista.insert_tail(@a2)
+                        @lista.insert_tail(@a3)
+
+			expect(@lista.select{|i| i.nombre == "sopa"}).to eq([@a1])
+                end
+		
+		it "Prueba collect" do
+                        @lista.insert_tail(@a1)
+                        @lista.insert_tail(@a2)
+                        @lista.insert_tail(@a3)
+
+                        expect(@lista.collect{|i| @a1}).to eq([@a1,@a1,@a1])
                 end
 
 
