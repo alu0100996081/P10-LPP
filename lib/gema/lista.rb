@@ -125,6 +125,54 @@ class List
         return gases
     end
 	
+    def get_proteinas
+	puntero=@head
+	total_proteinas=0
+	if(@head!=nil)
+	     while(puntero!=nil) do
+	           total_proteinas+=puntero.value.proteinas
+	           if(puntero.nest!=nil)
+	                puntero=puntero.nest
+	           else
+	                puntero=nil
+	           end
+	     end
+	end
+	return total_proteinas
+    end	    
+
+     def get_nutrientes
+	 puntero=@head
+	 total_nutrientes=0
+	 if(@head!=nil)
+		 while(puntero!=nil) do
+			 total_nutrientes+=puntero.value.proteinas + puntero.value.chidratos + puntero.value.lipidos
+			 if(puntero.nest!=nil) 
+				 puntero=puntero.nest
+			 else
+				 puntero=nil
+			 end
+		 end
+	 end
+	 return total_nutrientes
+     end
+
+     def get_lipidos
+	     puntero=@head
+	     total_lipidos=0
+	     if(@head!=nil)
+		   while(puntero!=nil) do
+		        total_lipidos+=puntero.value.lipidos
+			if(puntero.nest!=nil)
+			   puntero=puntero.nest
+			else
+			    puntero=nil
+			end
+		    end
+	      end
+	 return total_lipidos
+      end
+	
     def each(&block)
 	    puntero = @head
 	    while(puntero!=nil) do
