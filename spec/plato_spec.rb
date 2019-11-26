@@ -87,6 +87,9 @@ RSpec.describe Plato do
 			@plato_vegetaria = Plato.new("Vegetaria",@dieta_vegetaria, @cantidad_vegetaria)
 			@plato_vegetaliana = Plato.new("Vegetaliana",@dieta_vegetaliana, @cantidad_vegetaliana)
 			@plato_animal = Plato.new("Animal",@dieta_animal, @cantidad_animal)
+		
+			@plato_hijo1 = Plato_hijo.new("Espa",@dieta_espanola,@cantidad_espanola)
+			@plato_hijo2 = Plato_hijo.new("Vasc",@dieta_vasca,@cantidad_vasca)
 		end
 		
 		describe "Prueba Plato" do
@@ -131,5 +134,10 @@ RSpec.describe Plato do
 			end
 		end	
 
+		describe "Pruebas de clase Plato hijo " do
+			it "prueba  <  plato hijo" do
+				expect(@plato_hijo1 < @plato_hijo2).to eq(true)
+			end
+		end	
 end
 
