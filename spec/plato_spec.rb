@@ -125,6 +125,10 @@ RSpec.describe Plato do
 			it "@plato instancia de la clase plato" do
 				expect(@plato_espanol.instance_of? Plato).to eq(true)
 			end
+		
+			it "@plato es un objeto de la clase plato" do 
+				expect(@plato_espanol.is_a? Plato).to eq(true)
+			end
 		end	
 
 end
