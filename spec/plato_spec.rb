@@ -116,5 +116,12 @@ RSpec.describe Plato do
 				expect(@plato_espanol.por_chidratos).to eq(40)
 			end
 		end
+
+		describe "Pruebas de clase" do
+			it "Plato pertenece a plato" do
+				expect(@plato_espanol.class).to eq(Plato)
+			end
+		end	
+
 end
 
