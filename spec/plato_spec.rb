@@ -92,6 +92,11 @@ RSpec.describe Plato do
 			@plato_hijo1 = Plato_hijo.new("Espa",@dieta_espanola,@cantidad_espanola)
 			@plato_hijo2 = Plato_hijo.new("Vasc",@dieta_vasca,@cantidad_vasca)
 			@plato_hijo3 = Plato_hijo.new("animal",@dieta_animal,@cantidad_animal)
+
+			@lista_platos = Lista.new(nil,nil)
+			@lista_platos.insert_tail(@plato_hijo1)
+			@lista_platos.insert_tail(@plato_hijo2)
+			@lista_platos.insert_tail(@plato_hijo3)
 		end
 		
 		describe "Prueba Plato" do
@@ -136,7 +141,7 @@ RSpec.describe Plato do
 			end
 		end	
 
-		describe "Pruebas de clase Plato hijo " do
+		describe "Pruebas comparable clase Plato hijo " do
 			it "prueba  <  plato hijo" do
 				expect(@plato_hijo1 < @plato_hijo2).to eq(false)
 			end
@@ -166,5 +171,29 @@ RSpec.describe Plato do
 			end
 
 		end	
+
+		describe "Pruebas enumerables clase plato hijo" do
+			
+			it "Prueba max" do
+				expect(@lista_platos.max).to eq(@plato_hijo2)
+			end
+
+			it "Prueba min" do
+				expect(@lista_platos.min).to eq(@plato_hijo2)
+			end
+
+			it "Prueba sort" do
+				expect(@lista_platos.sort).to eq([@plato_hijo1,@plato_hijo2,@plato_hijo3])
+			end
+
+			it "Prueba select" do
+				expect(@lista_platos.select{|i| i.nombre == "Espa"}).to eq([@plato_hijo1])
+			end
+
+			it "Prueba collect" do
+				expect(@lista_platos.collect{|i| @plato_hijo1}).to eq([@plato_hijo1,@plato_hijo2,@plato_hijo3])
+			end
+
+		end
 end
 
