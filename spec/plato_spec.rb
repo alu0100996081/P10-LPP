@@ -95,7 +95,11 @@ RSpec.describe Plato do
 				  expect(@plato_espanol.nombre).to eq("Espanol")
 			  end	  
 
-
+				
+			it "Plato tiene Alimento" do
+				expect(@plato_espanol.alimentos).to eq(@dieta_espanola)
+			end
+ 
 		           it "Emisiones de gases invernadero diarios" do
 
 			   end
