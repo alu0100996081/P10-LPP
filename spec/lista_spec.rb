@@ -172,6 +172,35 @@ RSpec.describe Alimentos do
             expect(@dieta_animal.tierras).to eq(190)
         end
     end
+	describe "Pruebas comparables alimentos" do
+		it "Prueba >" do
+			expect(@a1>@a2).to eq(true)
+		end
+		
+		it "Prueba <" do
+                        expect(@a1<@a2).to eq(true)
+                end
 
+ 		it "Prueba >=" do
+                        expect(@a1>=@a2).to eq(true)
+                end
+
+ 		it "Prueba <=" do
+                        expect(@a1<=@a2).to eq(true)
+                end
+
+  		it "Prueba ==" do
+                        expect(@a1==@a2).to eq(true)
+                end
+
+		it "Prueba between" do
+			expect(@a1.between?(@a2,@a3)).to eq(true)
+                end
+
+  		it "Prueba clamp" do
+			expect(@a1.irenergia.clamp(0,20)).to eq(20)
+                end
+
+
+	end	
 end
-
