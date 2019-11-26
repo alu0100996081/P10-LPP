@@ -19,5 +19,12 @@ class Plato
 	        total_nutrientes = @alimentos.get_nutrientes
 	        porcentaje_lipidos = (total_lipidos * 100) /total_nutrientes
 	        return porcentaje_lipidos
-	end			    
+	end	
+
+	 def por_chidratos
+	      total_chidratos = @alimentos.get_chidratos
+	      total_nutrientes = @alimentos.get_nutrientes
+	      porcentaje_chidratos = (total_chidratos * 100) /total_nutrientes
+	      return porcentaje_chidratos
+	 end
 end

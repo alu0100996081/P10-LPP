@@ -172,7 +172,23 @@ class List
 	      end
 	 return total_lipidos
       end
-	
+
+      def get_chidratos
+          puntero=@head
+          total_chidratos=0
+          if(@head!=nil)
+             while(puntero!=nil) do
+                  total_chidratos+=puntero.value.chidratos
+                  if(puntero.nest!=nil)
+                      puntero=puntero.nest
+                  else
+                      puntero=nil
+                  end
+              end
+         end
+        return total_chidratos
+     end  
+
     def each(&block)
 	    puntero = @head
 	    while(puntero!=nil) do
