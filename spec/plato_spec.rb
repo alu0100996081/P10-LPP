@@ -91,18 +91,23 @@ RSpec.describe Plato do
 		
 		describe "Prueba Plato" do
 				
-			  it "Nombre" do
+			it "Nombre" do
 				  expect(@plato_espanol.nombre).to eq("Espanol")
-			  end	  
+			end	  
 
 				
 			it "Plato tiene Alimento" do
 				expect(@plato_espanol.alimentos).to eq(@dieta_espanola)
 			end
  
-		           it "Plato tiene cantidades" do
+		        it "Plato tiene cantidades" do
 				expect(@plato_espanol.cantidades).to eq(@cantidad_espanola)
-			   end
+			end
+
+			it "Plato calcula porcentaje proteinas" do
+				expect(@plato_espanol.por_proteinas).to eq(10)
+			end	
+
 		end
 end
 
