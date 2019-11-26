@@ -93,7 +93,7 @@ RSpec.describe Plato do
 			@plato_hijo2 = Plato_hijo.new("Vasc",@dieta_vasca,@cantidad_vasca)
 			@plato_hijo3 = Plato_hijo.new("animal",@dieta_animal,@cantidad_animal)
 
-			@lista_platos = Lista.new(nil,nil)
+			@lista_platos = List.new(nil,nil)
 			@lista_platos.insert_tail(@plato_hijo1)
 			@lista_platos.insert_tail(@plato_hijo2)
 			@lista_platos.insert_tail(@plato_hijo3)
@@ -141,11 +141,11 @@ RSpec.describe Plato do
 			end
 
 			it "calcular emision de gases" do 
-				expect(@plato_espanol.calc_gases).to eq(100)
+				expect(@plato_espanol.calc_gases).to eq(111)
 			end	
 
-			it "calcular gei" do
-				expect(@plato_espanol.calc_gei).to eq(100)
+			it "calcular terreno" do
+				expect(@plato_espanol.calc_terreno).to eq(69)
 			end
 		end	
 
