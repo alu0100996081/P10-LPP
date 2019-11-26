@@ -1,7 +1,7 @@
 Node = Struct.new(:value, :nest, :prev)
 
 class List
-
+	include Enumerable
 	attr_reader :head, :tail
 
 	def initialize(head, tail) 	
@@ -124,6 +124,13 @@ class List
         end
         return gases
     end
-
+	
+    def each(&block)
+	    puntero = @head
+	    while(puntero!=nil) do
+		    yield puntero.value
+		    puntero = puntero.nest
+	    end
+    end
 		   
 end
