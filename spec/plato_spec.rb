@@ -91,6 +91,7 @@ RSpec.describe Plato do
 		
 			@plato_hijo1 = Plato_hijo.new("Espa",@dieta_espanola,@cantidad_espanola)
 			@plato_hijo2 = Plato_hijo.new("Vasc",@dieta_vasca,@cantidad_vasca)
+			@plato_hijo3 = Plato_hijo.new("animal",@dieta_animal,@cantidad_animal)
 		end
 		
 		describe "Prueba Plato" do
@@ -139,6 +140,31 @@ RSpec.describe Plato do
 			it "prueba  <  plato hijo" do
 				expect(@plato_hijo1 < @plato_hijo2).to eq(false)
 			end
+			
+			it "prueba > plato hijo" do
+				expect(@plato_hijo1 > @plato_hijo2).to eq(true)
+			end
+
+			it "prueba <= plato hijo" do 
+				expect(@plato_hijo1 <= @plato_hijo2).to eq(false)
+			end
+
+			it "prueba >= plato hijo"do 
+				expect(@plato_hijo1 >= @plato_hijo2).to eq(true)
+			end
+
+			it "prueba == plato hijo" do
+				expect(@plato_hijo1 == @plato_hijo2).to eq(false)	
+			end
+
+			it "prueba between plato hijo"do
+				expect(@plato_hijo1.between?(@plato_hijo2,@plato_hijo3)).to eq(true)
+			end
+
+			it "Prueba clamp"do
+				expect(@plato_hijo1.por_proteinas.clamp(0,100)).to eq(20)	
+			end
+
 		end	
 end
 
