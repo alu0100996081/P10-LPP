@@ -27,4 +27,12 @@ class Plato
 	      porcentaje_chidratos = (total_chidratos * 100) /total_nutrientes
 	      return porcentaje_chidratos
 	 end
+
+	 def calc_gases
+		 return @alimentos.gases
+	 end
+
+	 def calc_terreno
+		 return @alimentos.tierras
+	 end
 end
