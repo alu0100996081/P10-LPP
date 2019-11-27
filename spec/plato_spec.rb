@@ -140,13 +140,6 @@ RSpec.describe Plato do
 				expect(@plato_espanol.is_a? Plato).to eq(true)
 			end
 
-			it "calcular emision de gases" do 
-				expect(@plato_espanol.calc_gases).to eq(111)
-			end	
-
-			it "calcular terreno" do
-				expect(@plato_espanol.calc_terreno).to eq(69)
-			end
 		end	
 
 		describe "Pruebas comparable clase Plato hijo " do
@@ -202,6 +195,21 @@ RSpec.describe Plato do
 				expect(@lista_platos.collect{|i| @plato_hijo1}).to eq([@plato_hijo1,@plato_hijo1,@plato_hijo1])
 			end
 
+		end
+
+		describe "Pruebas funciones plato hijo" do
+
+			it "Prueba calcula gases plato hijo" do
+				expect(@plato_hijo1.calc_gases).to eq(111)
+			end
+
+			it "Prueba calcula terreno plato hijo" do
+				expect(@plato_hijo1.calc_terreno).to eq(69)
+			end
+
+			it "Prueba calcula energia plato hijo" do
+				expect(@plato_hijo1.calc_ener).to eq(1800)
+			end
 		end
 
 

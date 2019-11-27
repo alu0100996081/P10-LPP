@@ -125,6 +125,22 @@ class List
         return gases
     end
 	
+    def energia
+        puntero=@head
+        energia=0
+        if(@head!=nil)
+            while(puntero!=nil) do
+                energia+=puntero.value.energia
+                if(puntero.nest!=nil)
+                    puntero=puntero.nest
+                else
+                    puntero=nil
+                end
+            end
+        end
+        return energia
+    end
+
     def get_proteinas
 	puntero=@head
 	total_proteinas=0
