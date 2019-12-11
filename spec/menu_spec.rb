@@ -28,7 +28,7 @@ RSpec.describe Plato do
 		@cantidad.insert_tail(27)
 
 		@plato = Plato.new("plato1",@dieta,@cantidad)
-	
+		@plato_hijo = Plato_hijo.new("phijo",@dieta,@cantidad)
 
 		 @dieta2 = List.new(nil,nil)
 		 @dieta2.insert_tail(@a4)
@@ -40,6 +40,7 @@ RSpec.describe Plato do
 		 @cantidad2.insert_tail(27)
 		 
 		 @plato2 = Plato.new("plato2",@dieta2,@cantidad2)
+		 @plato_hijo2 = Plato_hijo.new("phijo2",@dieta2,@cantidad2)
 
 		  @dieta3 = List.new(nil,nil)
 		  @dieta3.insert_tail(@a7)
@@ -56,12 +57,20 @@ RSpec.describe Plato do
 	end
 
 	describe "Prueba Huella Nutricional" do
-		it "Prueba funcion huella nutricional" do 
+		it "funcion huella nutricional" do 
 			expect(@plato.huella_nutricional).to eq(2.0)
 		end
 
-		
+		it "Plato maxima huella" do
+			expect(@plato_hijo>@plato_hijo2).to eq(true)
+		end
 
-
+		it ""	do
+			array_menu = []
+			array_menu << @plato
+			array_menu << @plato2
+			array_menu << @plato3
+			
+		end
 	end
 end
