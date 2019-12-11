@@ -62,7 +62,7 @@ RSpec.describe Plato do
 		end
 
 		it "Plato maxima huella" do
-			expect(@plato_hijo>@plato_hijo2).to eq(true)
+			expect(@plato_hijo>@plato_hijo2).to eq(false)
 		end
 
 		it ""	do
