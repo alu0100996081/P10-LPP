@@ -3,7 +3,7 @@ require 'gema/lista.rb'
 require 'gema/plato.rb'
 require 'gema/plato_hijo.rb'
 
-RSpec.describe Menu do
+RSpec.describe Plato do
 	before :each do
 		@a1 = Alimentos.new("Potaje",43,21,54,3,4)
 		@a2 = Alimentos.new("Carne",23,23,54,6,3)
@@ -57,7 +57,7 @@ RSpec.describe Menu do
 
 	describe "Prueba Huella Nutricional" do
 		it "Prueba funcion huella nutricional" do 
-			expect(@plato.huella_nutricional).to eq(20)
+			expect(@plato.huella_nutricional).to eq(2.0)
 		end
 
 		
