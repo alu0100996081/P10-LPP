@@ -8,7 +8,7 @@ class List
 		@head = head
 		@tail = tail
 	end
-	
+	#inserta en la lista por la cola	
 	def insert_tail(value)
 		nodo = Node.new(value,nil,nil)
 		if(@tail == nil)
@@ -21,7 +21,7 @@ class List
 			nodo.nest = nil
 		end 
 	end
-
+	#devuelve el valor de la cola
 	def get_tail
 		if(@tail == nil)
 			puts "List Empty"
@@ -35,7 +35,7 @@ class List
 		end	
 		return aux
 	end
-
+	#inserta por la cabeza
 	def insert_head(value)
 		nodo = Node.new(value,nil,nil)
 		if(@head == nil)
@@ -48,7 +48,7 @@ class List
 			nodo.prev = nil
 		end
 	end
-
+	#devuelve el elemento de cabeza de la lista
 	def get_head
 		if(@head == nil)
 			puts "List Empty"
@@ -65,7 +65,7 @@ class List
 		end
 		return aux
 	end
-
+	#comprueba si la lista esta vacia
 	def vacio
 		if(@tail==nil)
 			return true
@@ -73,7 +73,7 @@ class List
 			return false
 		end
 	end	
-
+	#imprime la lista
 	def to_s
 
         	puntero=@head
@@ -91,7 +91,7 @@ class List
             end
 
 	end
-	
+	#calcula los cases de los elementos d la lista
 	def gases
  	    puntero=@head
        	    gases=0
@@ -108,7 +108,7 @@ class List
             return gases
          end
 
- 
+ #calcula los gases de la lista
     def tierras
         puntero=@head
         gases=0
@@ -124,7 +124,7 @@ class List
         end
         return gases
     end
-	
+	#calcula la energia total de los elementos  de la lista
     def energia
         puntero=@head
         energia=0
@@ -140,7 +140,7 @@ class List
         end
         return energia
     end
-
+	#devuleve el total de proteinas de la lista
     def get_proteinas
 	puntero=@head
 	total_proteinas=0
@@ -156,7 +156,7 @@ class List
 	end
 	return total_proteinas
     end	    
-
+	#devuelve el total de nutrientes
      def get_nutrientes
 	 puntero=@head
 	 total_nutrientes=0
@@ -172,7 +172,7 @@ class List
 	 end
 	 return total_nutrientes
      end
-
+#devuelve el total de lipidos
      def get_lipidos
 	     puntero=@head
 	     total_lipidos=0
@@ -188,7 +188,7 @@ class List
 	      end
 	 return total_lipidos
       end
-
+#devuelve el total de hidratos
       def get_chidratos
           puntero=@head
           total_chidratos=0
@@ -204,7 +204,7 @@ class List
          end
         return total_chidratos
      end  
-
+#metodo enumerable
     def each(&block)
 	    puntero = @head
 	    while(puntero!=nil) do
