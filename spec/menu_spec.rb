@@ -72,6 +72,22 @@ RSpec.describe Plato do
 		
 		it "Incrementa Precio" do
 
+			array_precios = []
+			array_precios << 15
+			array_precios << 10
+			array_precios << 5
+			
+			array_menu = []
+			array_menu << @plato_hijo
+			array_menu << @plato_hijo2
+			array_menu << @plato_hijo3
+			
+			plato_max = array_menu.max
+
+			proporcion = plato_max.huella_nutricional
+
+			resultado = array_precios.map{|x| x * proporcion }
+			expect(resultado).to eq([30.0,20.0,10.0])
 
 		end
 
