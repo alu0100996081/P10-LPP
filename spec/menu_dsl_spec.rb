@@ -1,7 +1,7 @@
+require "gema/MenuDsl.rb"
 
 
-
-Rspec.describe MenuDsl do
+RSpec.describe MenuDsl do
 
 	describe "carga Correctamente" do
 		it "ejemplo de carga" do
